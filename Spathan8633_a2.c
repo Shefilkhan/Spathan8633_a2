@@ -30,3 +30,26 @@ typedef struct {
 typedef struct {
 	Task* Top;
 } Stack;
+
+/*
+  FUNCTION		: InitializeQueue
+  DESCRIPTION	: Allocates and initializes a new Queue.
+  RETURNS		: Queue* - pointer to the newly created queue
+*/
+Queue* InitializeQueue() {
+	Queue* q = (Queue*)malloc(sizeof(Queue));
+	q->Front = NULL;
+	q->Back = NULL;
+	return q;
+}
+
+/*
+  FUNCTION		: InitilizeStack
+  DESCRIPTION	: allocates and initializes a new stack.
+  RETURNS		: Stack* - pointer to the newly created stack
+*/
+Stack* InitializeStack() {
+	Stack* s = (Stack*)malloc(sizeof(Stack));
+	s->Top = NULL;
+	return s;
+}

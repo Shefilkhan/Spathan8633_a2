@@ -53,3 +53,45 @@ Stack* InitializeStack() {
 	s->Top = NULL;
 	return s;
 }
+
+int main(void) {
+	int Choice;
+
+	do {
+		printf("\nTask Scheduler Menu:\n");
+		printf("1. Add a Task\n");
+		printf("2. Process a Task\n");
+		printf("3. Undo Last Completed Task\n");
+		printf("4. View Pending Tasks\n");
+		printf("5. View Completed Tasks\n");
+		printf("6. Exit\n");
+		printf("Please Enter you choice:");
+		scanf_s("%d", &Choice);
+
+		switch (Choice) {
+		case 1:
+			printf("Add a Task (not yet implement)\n");
+			break;
+		case 2:
+			printf("Process a Task (not yet implement)\n");
+			break;
+		case 3:
+			printf("Undo Last completed Task (not yet implement)\n");
+			break;
+		case 4:
+			printf("View Pending Tasks (not yet implement)\n");
+			break;
+		case 5:
+			printf("View Completed Tasks (not yet implement)\n");
+			break;
+		case 6:
+			printf("Exiting Task Scheduler...\n");
+			break;
+		default:
+			printf("Invalid choice.\n");
+		}
+
+	} while (Choice != 6);
+
+	return 0;
+}

@@ -13,7 +13,7 @@
 
 #define MAX_NAME_LENGTH 100
 
-// Represents a task with name and priorty level. used in both Queue and Stack.
+ // Represents a task with name and priorty level. used in both Queue and Stack.
 typedef struct Task {
 	char Name[MAX_NAME_LENGTH];
 	int PriorityLevel;
@@ -54,6 +54,25 @@ Stack* InitializeStack() {
 	return s;
 }
 
+Task* CreateNewTask(char* name, int Priority) {
+	Task* newTask = (Task*)malloc(sizeof(Task));
+	if (!newTask) {
+		printf("Memory Allocation Failed\n");
+		exit(EXIT_FAILURE);
+	}
+
+	int i = 0;
+	while (name[i] != '\0' && i < MAX_NAME_LENGTH - 1)
+	{
+		newTask->Name[i] = name[i];
+		i++;
+	}
+	newTask->Name[i] = '\0';
+
+	newTask->PriorityLevel = Priority;
+	newTask->next = NULL;
+	return newTask;
+}
 int main(void) {
 	int Choice;
 
